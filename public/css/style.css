@@ -1,0 +1,109 @@
+.header {
+  width: 100px;
+  height: 50px;
+  display: grid; /**/
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.nav {
+  display: flex;
+}
+
+body {
+  height: 100vh !important;
+}
+
+.bg-image-home {
+  width: 100%;
+}
+
+.bg-image-home img {
+  object-fit: cover;
+}
+
+.bg-login-color {
+  width: 100%;
+  background-color: #ffcbcb;
+  height: 100vh;
+}
+.p-120 {
+  padding-top: 120px;
+}
+.bg-login-color form {
+  width: 40%;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 4%;
+}
+
+.bg-login-color form h1,
+.bg-login-color form p {
+  color: #cd381f;
+  text-align: center;
+}
+
+.bg-new-house-color form {
+  width: 60%;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 4%;
+}
+.bg-new-house-color {
+  width: 100%;
+  background-color: #ffcbcb;
+  height: 100vh;
+}
+
+.bg-new-house-color form h1,
+.bg-login-color form p {
+  color: #cd381f;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #cd381f;
+  border-color: #cd381f;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #f84a2b;
+  border-color: #f84a2b;
+}
+
+.tag-price {
+  float: right;
+}
+
+form div.input-file {
+  border: 4px dashed #cd381f;
+}
+
+form p.input-file {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 170px;
+  color: #cd381f;
+  font-family: Arial;
+}
+form input.input-file {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 50%;
+}
+
+.tash {
+  float: right;
+}
