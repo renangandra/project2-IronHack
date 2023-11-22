@@ -1,8 +1,19 @@
+/**
+ * Autenticação de Usuário
+ * 
+ * VERBO HTTP: POST
+ * BASE_URL: http://localhost:5000/sessions
+ */
+const BASE_URL = "http://localhost:5000"
+
 function login(request){
     axios.post(`${BASE_URL}/sessions`, request)
         .then(response => {
-            // SE DEU CERTO
-            //TODO: Adicionar as informações que estao no response no localStorage
+            // Salvando na memória do navegador as informações de usuário retornadas no login para que não se perca ao recarregar a página.
+            localStorage.setItem("user_id", response.data.id);
+            localStorage.setItem("user_email", response.data.email);
+            localStorage.setItem("_", response.data.token);
+            // Redirecionando para a página de minhas casas
             window.location.href="http://localhost:3000/mine-houses";
         })
         .catch(error => console.error(error)); //SE DEU MERDA

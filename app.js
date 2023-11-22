@@ -1,7 +1,6 @@
 // require('./DB');
 const express = require('express');// chamando ele pra funcionanr aqui dentro
 const routesAuth = require('./routes/auth');// colocar as rotas em 2 lugar
-
 const hbs = require('hbs');
 // const connectDB = require('./DB');
 const path = require('path');
@@ -23,9 +22,6 @@ app.use(express.static(path.join(__dirname, ".", "public")));//ele vai procurar 
 
 
 app.use('/', routesAuth)// funcao pra configurar o que o express vai utilizar 
-
-
-
 
 app.listen(3000, ()=> { //inicializar o servidor. 1: numero da porta, 2: funcao pra ser executada quandop o servidor estiver rodando
     console.log('server running')

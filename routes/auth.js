@@ -15,4 +15,21 @@ routes.get('/signup',(req,res)=>{
     res.render("signup")
 })
 
+routes.get('/new-house',(req,res)=>{
+    res.render("new-house")
+})
+
+routes.get('/edit-house/:id',(req,res)=>{
+    res.render("edit-house")
+})
+
+
+routes.get('/mine-houses',(req,res)=>{
+    res.render("mine-houses")
+})
+
+routes.get('/houses',(req,res)=>{
+    res.render("houses")
+})
+
 module.exports=routes
