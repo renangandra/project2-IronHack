@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, ".", "public"))); //ele vai procurar
 
 app.use("/", routesAuth); // funcao pra configurar o que o express vai utilizar
 
-app.listen(3001, () => {
+app.listen(3000, () => {
   //inicializar o servidor. 1: numero da porta, 2: funcao pra ser executada quandop o servidor estiver rodando
   console.log("server running");
 });
