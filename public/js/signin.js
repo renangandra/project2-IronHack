@@ -1,21 +1,32 @@
-function login(request){
-    axios.post(`${BASE_URL}/sessions`, request)
-        .then(response => {
-            // SE DEU CERTO
-            //TODO: Adicionar as informações que estao no response no localStorage
-            window.location.href="http://localhost:3000/mine-houses";
-        })
-        .catch(error => console.error(error)); //SE DEU MERDA
+// Function for handling user login
+function login(request) {
+  // Axios POST request for user login
+  axios
+    .post(`${BASE_URL}/sessions`, request)
+    .then((response) => {
+      // On successful login
+      // TODO: Store the response information in localStorage
+      // Redirect to '/mine-houses' page
+      window.location.href = "http://localhost:3000/mine-houses";
+    })
+    .catch((error) => {
+      // Log error in case of failed login attempt
+      console.error(error);
+    });
 }
 
-//DOM -- Manupulação do HTML para Envio das informações dos formulários e botões
-document.getElementById('btnSignin').addEventListener('click', function(event) {
-    event.preventDefault();
-    //Pegar valores dos inputs e montar a request
+// Event listener for the login button
+document
+  .getElementById("btnSignin")
+  .addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Gathering values from the login form inputs
     const request = {
-        email: document.querySelector('input[name="email"').value,
-        password: document.querySelector('input[name="password"').value
-    }
-    //Chamar AXIOS
+      email: document.querySelector('input[name="email"]').value,
+      password: document.querySelector('input[name="password"]').value,
+    };
+
+    // Calling the login function with the collected data
     login(request);
   });

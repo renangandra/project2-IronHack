@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary p-5">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><img src="/images/logo.jpg" /></a>
-    <!-- puxei a imagem-->
+    <!-- Add an Image-->
     <div class="d-flex" role="search">
       <button
         class="navbar-toggler"
@@ -28,7 +28,7 @@
           <li class="nav-item nav-item-1" id="signup">
             <a class="nav-link" href="signup">SignUp</a>
           </li>
-          {{! Rotas Privadas }}
+          {{! Add an Image }}
           <li class="nav-item nav-item-2" id="mine-houses">
             <a class="nav-link" href="/mine-houses">Mine Houses</a>
           </li>
@@ -44,15 +44,15 @@
   </div>
 </nav>
 
-<!-- TODO: Buscar imovel na API e preencher campos previamente -->
-<!-- TODO: Integrar com Endpoint de Edição de Imovel -->
+<!-- TODO: Search for property in the API and fill in fields beforehand -->
+<!-- TODO: Integrate with Property Editing Endpoint -->
 <div
   class="bg-new-house-color d-flex flex-column justify-center align-items-center p-5"
 >
   <form class="d-flex flex-column justify-center">
     <h1>Edit your House</h1>
     <p class="text-center">Edite seu imovel</p>
-    <!--Todo: adicionar mascara monetária pra campo de preço-->
+
     <div class="mt-5 mb-3">
       <input
         name="price"
@@ -63,7 +63,7 @@
         placeholder="Price (xx.xx)"
       />
     </div>
-    <!--Todo: adicionar mascara de data pra campo de datas-->
+
     <div class="mb-3">
       <input
         name="dateInitial"
