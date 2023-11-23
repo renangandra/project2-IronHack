@@ -1,35 +1,43 @@
 /**
- * Cadastro de Casa
+ * Script for Adding a New House
  *
- * VERBO HTTP: POST
+ * HTTP METHOD: POST
  * BASE_URL: http://localhost:5000/houses
  */
 
+// Base URL for the API calls
 const BASE_URL = "http://localhost:5000";
 
+// Function to add a new house
 function addNewHouse(request) {
+  // Setting headers for the POST request, including the authorization token and content type
   const headers = {
     headers: {
       "Content-Type": "multipart/form-data",
-      Authorization: localStorage.getItem("_"),
+      Authorization: localStorage.getItem("_"), // Authorization token from local storage
     },
   };
 
+  // Axios POST request to add a new house
   axios
     .post(`${BASE_URL}/houses`, request, headers)
     .then((response) => {
-      // SE DEU CERTO
+      // Redirect to '/mine-houses' upon successful house addition
       window.location.href = "/mine-houses";
     })
-    .catch((error) => console.error(error)); //SE DEU MERDA
+    .catch((error) => {
+      // Log error in case of failure
+      console.error(error);
+    });
 }
 
-//DOM -- Manupulação do HTML para Envio das informações dos formulários e botões
+// Adding event listener to the 'Add New House' button
 document
   .getElementById("btn-newHouse")
   .addEventListener("click", function (event) {
-    event.preventDefault();
-    //Pegar valores dos inputs e montar a request
+    event.preventDefault(); // Preventing default form submission behavior
+
+    // Creating a FormData object to gather input values from the form
     const request = new FormData();
     request.append(
       "price",
@@ -49,9 +57,11 @@ document
       document.querySelector('input[name="image"]').files[0]
     );
 
+    // Calling the function to add a new house with the form data
     addNewHouse(request);
   });
 
+// Redirect to home page if the user is not authorized (no token in local storage)
 if (!localStorage.getItem("_")) {
   window.location.href = "/";
 }

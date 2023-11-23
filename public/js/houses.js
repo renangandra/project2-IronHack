@@ -1,16 +1,8 @@
-/**
- * Listagem de Casas
- *
- * VERBO HTTP: GET
- * BASE_URL: http://localhost:5000/sessions
- */
-
+// Base URL for API requests
 const BASE_URL = "http://localhost:5000";
-// A função GetDate pega o dia, a GetMonth() pega o mês em número, sendo que começa pelo 0.
-// Pra facilitar, criei um array onde a posição corresponde ao número retornado pelo GetMonth()
-// EXEMPLO. Quando chamo o GetMonth() para data atual ele me retorna 10, porque estamos em novembro
-// Se você contar os meses começando pelo 0 será 10.
-var months = [
+
+// Array mapping month numbers to their abbreviations
+let months = [
   "JAN",
   "FEB",
   "MAR",
@@ -25,35 +17,36 @@ var months = [
   "DEC",
 ];
 
+// Axios GET request to fetch the list of houses
 axios
   .get(`${BASE_URL}/houses`)
   .then((response) => {
-    // Percorre o array retornado da API e monta uma lista de cards com as informações retornadas.
-    const html = response.data.map(
+    // Mapping each house to HTML content
+    let html = response.data.map(
       (index) => `
-        <div class="col-4 col-sm-4">
-            <div class="card">
-                <img class="card-img-top" src="${
-                  index.thumbnail_url
-                }" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">${new Date(
-                      index.dateInitial
-                    ).getDate()} ${
+                <div class="col-4 col-sm-4">
+                    <div class="card">
+                        <img class="card-img-top" src="${
+                          index.thumbnail_url
+                        }" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">${new Date(
+                              index.dateInitial
+                            ).getDate()} ${
         months[new Date(index.dateInitial).getMonth()]
       } - ${new Date(index.dateFinished).getDate()} ${
         months[new Date(index.dateFinished).getMonth()]
       } <span class="badge text-bg-success tag-price">U$ ${
         index.price
       }</span> </h5>
-                    <p class="card-text">${index.description}</p>
+                            <p class="card-text">${index.description}</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    `
+            `
     );
 
-    // Insere o os cards que montamos na div com esse ID na página houses
-    document.getElementById("list-houses").innerHTML = html;
+    // Inserting the generated cards into the HTML of the page
+    document.getElementById("list-houses").innerHTML = html.join("");
   })
-  .catch((error) => console.log(error));
+  .catch((error) => console.log(error)); // Logging error in case of a failed request
