@@ -9,7 +9,7 @@ function login(request){
             localStorage.setItem("user_email", response.data.email);
             localStorage.setItem("_", response.data.token);
             // Redirecting to my homes page
-            window.location.href="http://localhost:3000/mine-houses";
+            window.location.href="https://airbo-a0ep.onrender.com/mine-houses";
         })
         .catch(error => console.error(error)); //SE DEU MERDA
 }
