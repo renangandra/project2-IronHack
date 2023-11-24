@@ -1,55 +1,43 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary p-5">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="/images/logo.jpg" /></a>
-    <!-- puxei a imagem-->
-    <div class="d-flex" role="search">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="houses">Houses</a>
-          </li>
-          <li class="nav-item nav-item-1" id="signin">
-            <a class="nav-link" href="signin">SignIn</a>
-          </li>
-          <li class="nav-item nav-item-1" id="signup">
-            <a class="nav-link" href="signup">SignUp</a>
-          </li>
-          {{! Rotas Privadas }}
-          <li class="nav-item nav-item-2" id="mine-houses">
-            <a class="nav-link" href="mine-houses">Mine Houses</a>
-          </li>
-          <li class="nav-item nav-item-2" id="new-house">
-            <a class="nav-link" href="new-house">New House</a>
-          </li>
-          <li class="nav-item nav-item-2" id="logout">
-            <a class="nav-link" href="#">Logout</a>
-          </li>
-        </ul>
+    <a class="navbar-brand" href="#"><img src="/images/logo.jpg" ></a>
+      <div class="d-flex" role="search">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="houses">Airbo your home</a>
+            </li>
+            <li class="nav-item nav-item-1" id="signin">
+              <a class="nav-link" href="signin">Log in</a>
+            </li>
+            <li class="nav-item nav-item-1" id="signup">
+              <a class="nav-link" href="signup">Sign up</a>
+            </li>
+            {{!-- Private Routes --}}
+            <li class="nav-item nav-item-2" id="mine-houses">
+              <a class="nav-link" href="mine-houses">My Houses</a>
+            </li>
+            <li class="nav-item nav-item-2" id="new-house">
+              <a class="nav-link" href="new-house">new home</a>
+            </li>
+            <li class="nav-item nav-item-2" id="logout">
+              <a class="nav-link" href="#">Logout</a>
+            </li>
+          </ul>
       </div>
     </div>
   </div>
 </nav>
-<!-- TODO: Adicionar titulo na pága e melhorar distribuição de grade (CSS) -->
-<div
-  class="bg-new-house-color d-flex flex-column justify-center align-items-center p-5"
->
-  <div class="row col-12" id="list-houses">
-    <p>Not Found Houses.</p>
-  </div>
+<div class="bg-new-house-color d-flex flex-column justify-center align-items-center p-5">
+    <div class="row col-12" id="list-houses">
+        <p>Houses were not found.</p>
+    </div>
 </div>
 
 <script src="/js/houses.js"></script>

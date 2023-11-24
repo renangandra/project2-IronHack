@@ -1,59 +1,32 @@
-/**
- * Listagem de Casas
- *
- * VERBO HTTP: GET
- * BASE_URL: http://localhost:5000/sessions
- */
 
-const BASE_URL = "http://localhost:5000";
-// A função GetDate pega o dia, a GetMonth() pega o mês em número, sendo que começa pelo 0.
-// Pra facilitar, criei um array onde a posição corresponde ao número retornado pelo GetMonth()
-// EXEMPLO. Quando chamo o GetMonth() para data atual ele me retorna 10, porque estamos em novembro
-// Se você contar os meses começando pelo 0 será 10.
-var months = [
-  "JAN",
-  "FEB",
-  "MAR",
-  "APR",
-  "MAY",
-  "JUN",
-  "JUL",
-  "AUG",
-  "SEP",
-  "OCT",
-  "NOV",
-  "DEC",
-];
+const BASE_URL = "http://localhost:5000"
 
-axios
-  .get(`${BASE_URL}/houses`)
-  .then((response) => {
-    // Percorre o array retornado da API e monta uma lista de cards com as informações retornadas.
-    const html = response.data.map(
-      (index) => `
-        <div class="col-4 col-sm-4">
-            <div class="card">
-                <img class="card-img-top" src="${
-                  index.thumbnail_url
-                }" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">${new Date(
-                      index.dateInitial
-                    ).getDate()} ${
-        months[new Date(index.dateInitial).getMonth()]
-      } - ${new Date(index.dateFinished).getDate()} ${
-        months[new Date(index.dateFinished).getMonth()]
-      } <span class="badge text-bg-success tag-price">U$ ${
-        index.price
-      }</span> </h5>
-                    <p class="card-text">${index.description}</p>
-                </div>
-            </div>
-        </div>
-    `
-    );
+let months = [
+    "JAN", "FEB", "MAR", "APR",
+    "MAY", "JUN", "JUL", "AUG",
+    "SEP", "OCT", "NOV", "DEC"
+  ];
+  
+axios.get(`${BASE_URL}/houses`)
+  .then(response => {
+    if(response.data.length > 0){
+        // It goes through the array returned from the API and creates a list of cards with the information returned.
+        const html = response.data.map(index => `
+          <div class="col-3 col-sm-3 mb-3">
+              <div class="card h-100">
+                  <img class="card-img-top" src="${index.thumbnail_url}" alt="Card image cap">
+                  <div class="card-body">
+                      <h5 class="card-title">${new Date(index.dateInitial).getDate()} ${months[new Date(index.dateInitial).getMonth()]} - ${new Date(index.dateFinished).getDate()} ${months[new Date(index.dateFinished).getMonth()]} <span class="badge text-bg-success tag-price">U$ ${index.price}</span> </h5>
+                      <p class="card-text">${index.description}</p>
+                  </div>
+              </div>
+          </div>`).join('');
 
-    // Insere o os cards que montamos na div com esse ID na página houses
-    document.getElementById("list-houses").innerHTML = html;
+      // Insert the cards we created in the div with this ID on the houses page
+      document.getElementById('list-houses').innerHTML = html;
+    }
   })
-  .catch((error) => console.log(error));
+  .catch(error => console.log(error))
+
+
+    

@@ -1,132 +1,75 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary p-5">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="/images/logo.jpg" /></a>
-    <!-- puxei a imagem-->
-    <div class="d-flex" role="search">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="houses">Houses</a>
-          </li>
-          <li class="nav-item nav-item-1" id="signin">
-            <a class="nav-link" href="signin">SignIn</a>
-          </li>
-          <li class="nav-item nav-item-1" id="signup">
-            <a class="nav-link" href="signup">SignUp</a>
-          </li>
-          {{! Rotas Privadas }}
-          <li class="nav-item nav-item-2" id="mine-houses">
-            <a class="nav-link" href="/mine-houses">Mine Houses</a>
-          </li>
-          <li class="nav-item nav-item-2" id="new-house">
-            <a class="nav-link" href="new-house">New House</a>
-          </li>
-          <li class="nav-item nav-item-2" id="logout">
-            <a class="nav-link" href="#">Logout</a>
-          </li>
-        </ul>
+    <a class="navbar-brand" href="#"><img src="/images/logo.jpg" ></a> 
+      <div class="d-flex" role="search">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="houses">Airbo your home</a>
+            </li>
+            <li class="nav-item nav-item-1" id="signin">
+              <a class="nav-link" href="signin">Log in</a>
+            </li>
+            <li class="nav-item nav-item-1" id="signup">
+              <a class="nav-link" href="signup">Sign up</a>
+            </li>
+            {{!-- private routes --}}
+            <li class="nav-item nav-item-2" id="mine-houses">
+              <a class="nav-link" href="/mine-houses">My Houses</a>
+            </li>
+            <li class="nav-item nav-item-2" id="new-house">
+              <a class="nav-link" href="new-house">New House</a>
+            </li>
+            <li class="nav-item nav-item-2" id="logout">
+              <a class="nav-link" href="#">Logout</a>
+            </li>
+          </ul>
       </div>
     </div>
   </div>
 </nav>
 
-<!-- TODO: Buscar imovel na API e preencher campos previamente -->
-<!-- TODO: Integrar com Endpoint de Edição de Imovel -->
-<div
-  class="bg-new-house-color d-flex flex-column justify-center align-items-center p-5"
->
-  <form class="d-flex flex-column justify-center">
-    <h1>Edit your House</h1>
-    <p class="text-center">Edite seu imovel</p>
-    <!--Todo: adicionar mascara monetária pra campo de preço-->
-    <div class="mt-5 mb-3">
-      <input
-        name="price"
-        type="text"
-        class="form-control form-control-lg"
-        id="exampleInputName"
-        aria-describedby="nameHelp"
-        placeholder="Price (xx.xx)"
-      />
-    </div>
-    <!--Todo: adicionar mascara de data pra campo de datas-->
-    <div class="mb-3">
-      <input
-        name="dateInitial"
-        type="text"
-        class="form-control form-control-lg"
-        id="exampleInputName"
-        aria-describedby="nameHelp"
-        placeholder="Date Initial (xx/xx/xxxx)"
-      />
-    </div>
-    <div class="mb-3">
-      <input
-        name="dateFinished"
-        type="text"
-        class="form-control form-control-lg"
-        id="exampleInputName"
-        aria-describedby="nameHelp"
-        placeholder="Date Finished (xx/xx/xxxx)"
-      />
-    </div>
-    <div class="mb-3 form-group">
-      <textarea
-        name="description"
-        class="form-control form-control-lg"
-        id="exampleFormControlTextarea1"
-        rows="3"
-        placeholder="Description House:"
-      ></textarea>
-    </div>
-    <div class="mb-3 form-group">
-      <div class="form-group mb-2" x-data="{ fileName: '' }">
-        <div class="input-group shadow mb-2">
-          <span id="image-thumbnail" class="input-group-text px-3 text-muted">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-image"
-              viewBox="0 0 16 16"
-            >
-              <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-              <path
-                d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z"
-              />
-            </svg>
-          </span>
-          <input
-            name="image"
-            type="file"
-            class="form-control form-control-file form-control-file-lg"
-            id="exampleFormControlFile1"
-          />
+
+<div class="bg-new-house-color d-flex flex-column justify-center align-items-center p-5">
+    <form class="d-flex flex-column justify-center">
+        <h1>Edit your House</h1>
+        <p class="text-center">update your home</p>
+        <!--currency mask to price field -->
+        <div class="mt-5 mb-3">
+            <input name="price" type="text" class="form-control form-control-lg" id="exampleInputName" aria-describedby="nameHelp" placeholder="Price (xx.xx)">
         </div>
-        <p id="thumbnail_image"> </p>
-      </div>
-    </div>
-    <button
-      id="btn-edit"
-      type="button"
-      class="btn btn-primary btn-lg"
-    >Post!</button>
-  </form>
+        <!-- mask to date field -->
+        <div class="mb-3">
+            <input name="dateInitial" type="date" class="form-control form-control-lg" id="exampleInputName" aria-describedby="nameHelp" placeholder="Date Initial (xx/xx/xxxx)">
+        </div>
+        <div class="mb-3">
+            <input name="dateFinished" type="date" class="form-control form-control-lg" id="exampleInputName" aria-describedby="nameHelp" placeholder="Date Finished (xx/xx/xxxx)">
+        </div>
+        <div class="mb-3 form-group">
+            <textarea name="description" class="form-control form-control-lg" id="exampleFormControlTextarea1" rows="3" placeholder="Description House:"></textarea>
+        </div>
+        <div class="mb-3 form-group">
+            <div class="form-group mb-2" x-data="{ fileName: '' }">
+                <div class="input-group shadow mb-2">
+                    <span id="image-thumbnail" class="input-group-text px-3 text-muted">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+                            <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                            <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z"/>
+                        </svg>
+                    </span>
+                    <input name="image" type="file" class="form-control form-control-file form-control-file-lg" id="exampleFormControlFile1">
+                </div>
+                <p id="thumbnail_image"> </p>
+            </div>        
+        </div>
+        <button id="btn-edit" type="button" class="btn btn-primary btn-lg">Post!</button>
+    </form>
 </div>
 
 <script src="/js/navbar.js"></script>

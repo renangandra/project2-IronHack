@@ -1,79 +1,53 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary p-5">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="/images/logo.jpg" /></a>
-
-    <div class="d-flex" role="search">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="houses">Houses</a>
-          </li>
-          <li class="nav-item nav-item-1" id="signin">
-            <a class="nav-link" href="signin">SignIn</a>
-          </li>
-          <li class="nav-item nav-item-1" id="signup">
-            <a class="nav-link" href="signup">SignUp</a>
-          </li>
-          {{! Rotas Privadas }}
-          <li class="nav-item nav-item-2" id="mine-houses">
-            <a class="nav-link" href="mine-houses">Mine Houses</a>
-          </li>
-          <li class="nav-item nav-item-2" id="new-house">
-            <a class="nav-link" href="new-house">New House</a>
-          </li>
-          <li class="nav-item nav-item-2" id="logout">
-            <a class="nav-link" href="#">Logout</a>
-          </li>
-        </ul>
+    <a class="navbar-brand" href="#"><img src="/images/logo.jpg" ></a> 
+      <div class="d-flex" role="search">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="houses">Airbo your home</a>
+            </li>
+            <li class="nav-item nav-item-1" id="signin">
+              <a class="nav-link" href="signin">Log in</a>
+            </li>
+            <li class="nav-item nav-item-1" id="signup">
+              <a class="nav-link" href="signup">Sign up</a>
+            </li>
+            {{!-- Private Routes --}}
+            <li class="nav-item nav-item-2" id="mine-houses">
+              <a class="nav-link" href="mine-houses">My Houses</a>
+            </li>
+            <li class="nav-item nav-item-2" id="new-house">
+              <a class="nav-link" href="new-house">New House</a>
+            </li>
+            <li class="nav-item nav-item-2" id="logout">
+              <a class="nav-link" href="#">Logout</a>
+            </li>
+          </ul>
       </div>
     </div>
   </div>
 </nav>
-<div
-  class="bg-login-color d-flex flex-column justify-center align-items-center p-120"
->
-  <form method="POST" class="d-flex flex-column justify-center">
-    <h1>Agent Login!</h1>
-    <p class="text-center">Faça seu login para aproveitar as oportunidades</p>
-    <div class="mt-5 mb-3">
-      <input
-        name="email"
-        type="email"
-        class="form-control form-control-lg"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-        placeholder="Email:"
-      />
-    </div>
-    <div class="mb-5">
-      <input
-        name="password"
-        type="password"
-        class="form-control form-control-lg"
-        id="exampleInputPassword1"
-        placeholder="Password:"
-      />
-    </div>
-    <button
-      id="btnSignin"
-      type="button"
-      class="btn btn-primary btn-lg"
-    >SignIn</button>
-  </form>
+
+<div class="bg-login-color d-flex flex-column justify-center align-items-center p-120">
+    <form method="POST" class="d-flex flex-column justify-center">
+        <h1>Agent Login!</h1>
+        <p class="text-center">Log in to take advantage of opportunities</p>
+        <div class="mt-5 mb-3">
+            <input name="email" type="email" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email:">
+        </div>
+        <div class="mb-5">
+            <input name="password" type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password:">
+        </div>
+        <button id="btnSignin" type="button" class="btn btn-primary btn-lg">SignIn</button>
+    </form>
 </div>
+
 <script src="/js/signin.js"></script>
 <script src="/js/navbar.js"></script>
