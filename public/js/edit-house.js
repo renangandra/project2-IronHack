@@ -1,5 +1,5 @@
 
-const BASE_URL = "http://localhost:5000"
+const BASE_URL = "https://airbo-api.onrender.com"
 
 let months = [
     "JAN", "FEB", "MAR", "APR",
@@ -52,7 +52,7 @@ axios.get(`${BASE_URL}/houses/${house_id}`, { headers: {
   * House Registration
   *
   * HTTP VERB: POST
-  * BASE_URL: http://localhost:5000/houses
+  * BASE_URL: https://airbo-api.onrender.com/houses
   */
 
 function editHouse(request) {

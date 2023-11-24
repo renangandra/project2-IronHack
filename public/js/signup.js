@@ -1,6 +1,6 @@
 
 
-const BASE_URL = "http://localhost:5000"
+const BASE_URL = "https://airbo-api.onrender.com"
 
 function addNewUser(request) {
     axios.post(`${BASE_URL}/users`, request)
