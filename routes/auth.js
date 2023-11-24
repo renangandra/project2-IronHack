@@ -19,7 +19,7 @@ routes.get('/new-house',(req,res)=>{
     res.render("new-house")
 })
 
-routes.get('/edit-house/:id',(req,res)=>{
+routes.get('/edit-house',(req,res)=>{
     res.render("edit-house")
 })
 

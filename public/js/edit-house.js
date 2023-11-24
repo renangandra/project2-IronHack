@@ -14,7 +14,7 @@ let currentUrl = window.location.href; // Replace with window.location.href in y
 let segments = currentUrl.split('/');
 
 
-let house_id = segments[segments.length - 1];
+var house_id = localStorage.getItem("house")
 
 axios.get(`${BASE_URL}/houses/${house_id}`, { headers: {
     "authorization": localStorage.getItem("_")
