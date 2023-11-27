@@ -73,4 +73,4 @@ function handleClickEdit(event){
 
 if (!localStorage.getItem('_')) {
     window.location.href="/"
-}
+}}
